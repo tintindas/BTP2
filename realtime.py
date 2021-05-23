@@ -26,7 +26,10 @@ while True:
     # drawing bounding box around face
     for (x, y, w, h) in faces:
         img = cv2.rectangle(img, (x, y), (x + w, y + h), (0, 255, 0), 3)  # displaying image with bounding box
-    cv2.imshow("face_detect", img)  # loop will be broken when 'q' is pressed on the keyboard
-    if cv2.waitKey(10) & 0xFF == ord("q"):
-        breakcap.release()
+        cv2.imshow("face_detect", img)  # loop will be broken when 'q' is pressed on the keyboard
+        if cv2.waitKey(10) & 0xFF == ord("q"):
+            break
+imcap.release()
 cv2.destroyWindow("face_detect")
+
+# %%
