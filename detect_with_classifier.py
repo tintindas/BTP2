@@ -51,7 +51,7 @@ imcap.set(4, 200)
 # (H, W) = orig.shape[:2]
 
 
-def detect(orig, H, W):
+def detect(orig, H=200, W=200):
     # initialize the image pyramid
     pyramid = image_pyramid(orig, scale=PYR_SCALE, minSize=ROI_SIZE)
     # initialize two lists, one to hold the ROIs generated from the image
@@ -108,6 +108,7 @@ def detect(orig, H, W):
 
     print(p)
     print(np.argmax(p))
+    print(p[np.argmax(p)])
 
 
 # Detect from Video
